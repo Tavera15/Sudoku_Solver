@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.grid = new System.Windows.Forms.TableLayoutPanel();
             this.solve_btn = new System.Windows.Forms.Button();
+            this.clear_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +87,17 @@
             this.solve_btn.UseVisualStyleBackColor = true;
             this.solve_btn.Click += new System.EventHandler(this.solve_btn_Click);
             // 
+            // clear_btn
+            // 
+            this.clear_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.clear_btn.Location = new System.Drawing.Point(220, 485);
+            this.clear_btn.Name = "clear_btn";
+            this.clear_btn.Size = new System.Drawing.Size(128, 34);
+            this.clear_btn.TabIndex = 2;
+            this.clear_btn.Text = "Clear";
+            this.clear_btn.UseVisualStyleBackColor = true;
+            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,6 +105,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(778, 531);
+            this.Controls.Add(this.clear_btn);
             this.Controls.Add(this.solve_btn);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -108,6 +121,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel grid;
         private System.Windows.Forms.Button solve_btn;
+        private System.Windows.Forms.Button clear_btn;
     }
 }
 

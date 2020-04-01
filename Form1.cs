@@ -28,11 +28,14 @@ namespace Sudoku
                     {
                         for (int j = 0; j < 3; j++)
                         {
-                            // Create tile
+                            // Create NumericUpDown and set its background color to display 3x3 regions better
                             NumericUpDown NUD = new NumericUpDown();
+                            NUD.Maximum = 9;
                             NUD.Value = 0;
+                            NUD.BackColor = ((regionNumber+1) % 2 == 0 ? Color.Beige : Color.LightBlue);
+
+                            // Create tile and add to list
                             Tile t = new Tile(i + offX, j + offY, regionNumber, NUD);
-                            
                             allTiles.Add(t);
 
                             // Draw the tile to the grid
@@ -55,11 +58,11 @@ namespace Sudoku
         }
 
         // If a tile is equal to 0, it will return its column and row
-        private bool isBoardComplete(out Tile t)
+        private bool isBoardComplete(out Tile uTile)
         {
-            t = (allTiles.FirstOrDefault(tile => tile.NUD.Value == 0));
+            uTile = (allTiles.FirstOrDefault(t => t.NUD.Value == 0));
 
-            return (t == null);
+            return (uTile == null);
         }
 
         public bool solveGrid()
@@ -91,6 +94,11 @@ namespace Sudoku
         private void solve_btn_Click(object sender, EventArgs e)
         {
             solveGrid();
+        }
+
+        private void clear_btn_Click(object sender, EventArgs e)
+        {
+            allTiles.ForEach(t => t.NUD.Value = 0);
         }
 
         public Form1()
